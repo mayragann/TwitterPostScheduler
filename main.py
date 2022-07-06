@@ -16,4 +16,6 @@ def update_profile_info(name, url, location, description):
 def post_tweet(text):
     api.update_status(text)
 
-post_tweet('New Kindle Vella Chapter for Last Burning Ember coming on the 8th! #kindle, #lastburningember, #fantasy')
+def upload_media(text, filename):
+    media = api.media_upload(filename)
+    api.update_status(text, media_ids = [media.media_id_string])
